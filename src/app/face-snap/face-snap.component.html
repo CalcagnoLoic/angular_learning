@@ -1,1 +1,20 @@
-<p>face-snap works!</p>
+<div class="container">
+    <div class="face-snap-component">
+        <h1>{{ faceSnap.title }}</h1>
+        <div class="container__img">
+            <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
+            <q>{{ faceSnap.description }}</q>
+        </div>
+
+        <p>Mis en ligne le {{ faceSnap.createdDate }}</p>
+        <div class="container__rating">
+            <button class="btn" (click)="onSnap()">
+                {{ faceSnap.btnText }}
+            </button>
+            <div class="rating">
+                <span>Like 👍 : </span>
+                {{ faceSnap.snaps }}
+            </div>
+        </div>
+    </div>
+</div>
