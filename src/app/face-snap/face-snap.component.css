@@ -4,12 +4,12 @@
 
 .face-snap-component {
     display: block;
-    margin: 0 500px;
-    border: 2px solid black;
+    margin: 25px 500px;
     border-radius: 15px;
     margin-bottom: 15px;
-    background-color: bisque;
     padding: 20px 50px;
+    box-shadow: rgb(160, 160, 160) 4px 4px 20px;
+    box-sizing: border-box;
 }
 .container__img,
 .container__rating {
@@ -17,8 +17,6 @@
 }
 .container__img {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 .container__rating {
     justify-content: space-around;
@@ -26,19 +24,19 @@
     margin-top: 5%;
 }
 img {
-    width: 40%;
-    border-radius: 5%;
+    width: 100%;
+    border-radius: 5px;
 }
 h1 {
-    text-align: center;
+    margin-bottom: 0;
 }
 span {
     font-weight: bolder;
 }
 .btn {
-    background-color: rgb(196, 104, 0);
+    background-color: rgb(0, 20, 196);
+    box-shadow: 5px 5px 5px rgb(0, 10, 102);
     display: block;
-    margin: 0 auto;
     padding: 9px 18px 9px 18px;
     width: max-content;
     border-radius: 5px;
@@ -47,11 +45,25 @@ span {
     border: none;
 }
 .btn:hover {
-    background-color: rgba(196, 105, 0, 0.562);
+    background-color: rgba(0, 20, 196, 0.775);
 }
 q {
     font-style: italic;
+    margin-top: 5px;
 }
 .rating {
     align-items: center;
+}
+.snapped {
+    background-color: rgba(144, 238, 144, 0.4);
+}
+.snapped-btn {
+    background-color: rgb(0, 136, 0);
+    box-shadow: 5px 5px 5px rgb(0, 70, 29);
+}
+.snapped-btn:hover {
+    background-color: rgb(0, 99, 0, 0.775);
+}
+.snapped-txt {
+    color: rgb(0, 70, 29)
 }

@@ -20,14 +20,14 @@ export class FaceSnapComponent implements OnInit {
     ngOnInit(): void {}
 
     onSnap() {
-        if (this.faceSnap.isClicked === true) {
+        if (this.faceSnap.isClicked !== true) {
             this.faceSnap.snaps++;
             this.faceSnap.btnText = 'Already liked';
-            this.faceSnap.isClicked = false;
+            this.faceSnap.isClicked = true;
         } else {
             this.faceSnap.snaps--;
             this.faceSnap.btnText = 'Like it!';
-            this.faceSnap.isClicked = true;
+            this.faceSnap.isClicked = false;
         }
     }
 }

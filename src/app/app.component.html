@@ -1,3 +1,4 @@
-<app-face-snap [faceSnap]="mySnap"></app-face-snap>
-<app-face-snap [faceSnap]="mySecondSnap"></app-face-snap>
-<app-face-snap [faceSnap]="myOtherSnap"></app-face-snap>
+<app-face-snap
+    *ngFor="let snapElemFromArr of faceSnap"
+    [faceSnap]="snapElemFromArr"
+></app-face-snap>

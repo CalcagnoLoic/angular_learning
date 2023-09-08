@@ -1,19 +1,40 @@
 <div class="container">
-    <div class="face-snap-component">
-        <h1>{{ faceSnap.title }}</h1>
-        <div class="container__img">
+    <div
+        class="face-snap-component"
+        [ngClass]="{ snapped: faceSnap.isClicked }"
+    >
+        <h1 [ngClass]="{ 'snapped-txt': faceSnap.isClicked }">
+            {{ faceSnap.title }}
+        </h1>
+
+        <p [ngClass]="{ 'snapped-txt': faceSnap.isClicked }">
+            Mis en ligne le {{ faceSnap.createdDate }}
+        </p>
+        <div
+            class="container__img"
+            [ngClass]="{ 'snapped-txt': faceSnap.isClicked }"
+        >
             <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
             <q>{{ faceSnap.description }}</q>
+            <p *ngIf="faceSnap.location">
+                Photo prise à {{ faceSnap.location }}
+            </p>
         </div>
 
-        <p>Mis en ligne le {{ faceSnap.createdDate }}</p>
         <div class="container__rating">
-            <button class="btn" (click)="onSnap()">
+            <button
+                class="btn"
+                (click)="onSnap()"
+                [ngClass]="{ 'snapped-btn': faceSnap.isClicked }"
+            >
                 {{ faceSnap.btnText }}
             </button>
             <div class="rating">
                 <span>Like 👍 : </span>
-                {{ faceSnap.snaps }}
+                <span
+                    [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }"
+                    >{{ faceSnap.snaps }}</span
+                >
             </div>
         </div>
     </div>
