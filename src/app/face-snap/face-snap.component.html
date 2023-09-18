@@ -4,11 +4,11 @@
         [ngClass]="{ snapped: faceSnap.isClicked }"
     >
         <h1 [ngClass]="{ 'snapped-txt': faceSnap.isClicked }">
-            {{ faceSnap.title }}
+            {{ faceSnap.title | uppercase }}
         </h1>
 
         <p [ngClass]="{ 'snapped-txt': faceSnap.isClicked }">
-            Mis en ligne le {{ faceSnap.createdDate }}
+            Mis en ligne le {{ faceSnap.createdDate | date: 'HH:mm, le dd MMMM yyyy'}}
         </p>
         <div
             class="container__img"
