@@ -1,0 +1,17 @@
+p {
+    text-align: center;
+    background-color: rgb(233, 233, 233);
+    padding: 30px;
+    margin: 0 auto;
+    color: rgb(53, 53, 53);
+}
+a {
+    color: rgb(53, 53, 53);
+    text-decoration: none;
+}
+a:hover {
+    font-style: italic;
+}
+footer {
+    margin-top: 35px;
+}
