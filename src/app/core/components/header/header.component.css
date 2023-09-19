@@ -1,0 +1,31 @@
+h1 {
+    text-align: center;
+    color: rgb(53, 53, 53);
+    font-size: 35px;
+}
+header {
+    margin-bottom: 35px;
+    background-color: rgb(233, 233, 233);
+    padding: 30px;
+    margin: 0 auto;
+}
+nav {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color: rgb(53, 53, 53);
+    font-weight: bolder;
+    font-size: 25px;
+}
+a:hover {
+    font-style: italic;
+    text-decoration: underline;
+}
+.active {
+    text-decoration: underline;
+    color: rgb(34, 34, 34);
+}

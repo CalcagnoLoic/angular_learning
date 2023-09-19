@@ -1,0 +1,13 @@
+<div class="container">
+    <div
+        class="face-snap-component"
+        [ngClass]="{ snapped: faceSnap.isClicked }"
+    >
+        <h1 [ngClass]="{ 'snapped-txt': faceSnap.isClicked }">
+            {{ faceSnap.title | uppercase }}
+        </h1>
+        <p>{{ faceSnap.description }}</p>
+
+        <button class="btn" (click)="onRedirectById()">{{ 'view' | uppercase }}</button>
+    </div>
+</div>

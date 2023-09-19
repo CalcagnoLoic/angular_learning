@@ -7,6 +7,7 @@ import { FaceSnap } from '../models/face-snap_model';
 export class FaceSnapService {
     faceSnaps: FaceSnap[] = [
         {
+            id: 1,
             title: 'Archibald',
             description: 'Mon meilleur ami depuis des années',
             createdDate: new Date(),
@@ -18,9 +19,10 @@ export class FaceSnapService {
             location: 'La Hestre',
         },
         {
+            id: 2,
             title: 'Starling bird',
             description: "Une photo d'un étourneau sansonnet",
-            createdDate: new Date(),
+            createdDate: new Date('2023-08-17T13:54:00'),
             snaps: 150,
             imageUrl:
                 'https://cdn.pixabay.com/photo/2023/08/29/19/09/starling-8221990_960_720.jpg',
@@ -28,9 +30,10 @@ export class FaceSnapService {
             isClicked: false,
         },
         {
+            id: 3,
             title: 'Lynx',
             description: 'Un Lynx sauvage',
-            createdDate: new Date(),
+            createdDate: new Date('2023-05-18T03:24:00'),
             snaps: 210,
             imageUrl:
                 'https://cdn.pixabay.com/photo/2023/09/02/15/03/lynx-8229077_960_720.png',
@@ -38,4 +41,25 @@ export class FaceSnapService {
             isClicked: false,
         },
     ];
+
+    getAllFaceSnaps(): FaceSnap[] {
+        return this.faceSnaps;
+    }
+
+    getFaceSnapById(faceSnapId: number): FaceSnap {
+        const faceSnap = this.faceSnaps.find(
+            (faceSnap) => faceSnap.id === faceSnapId
+        );
+
+        if (!faceSnap) {
+            throw new Error('Snap not found');
+        } else {
+            return faceSnap;
+        }
+    }
+
+    snapFaceById(faceSnapId: number, snapType: 'snap' | 'unsnap'): void {
+        const faceSnap = this.getFaceSnapById(faceSnapId);
+        snapType === 'snap' ? faceSnap.snaps++ : faceSnap.snaps--;
+    }
 }

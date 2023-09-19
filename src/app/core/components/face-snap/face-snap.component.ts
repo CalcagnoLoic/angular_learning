@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FaceSnap } from '../models/face-snap_model';
+import { FaceSnap } from '../../models/face-snap_model';
+import { FaceSnapService } from '../../services/face-snaps.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-face-snap',
@@ -8,26 +10,29 @@ import { FaceSnap } from '../models/face-snap_model';
 })
 export class FaceSnapComponent implements OnInit {
     @Input() faceSnap!: FaceSnap;
-
-    title!: string;
-    description!: string;
-    createdDate!: Date;
-    snaps!: number;
-    imageUrl!: string;
     btnText!: string;
     isClicked!: boolean;
+
+    constructor(
+        private faceSnapService: FaceSnapService,
+        private router: Router
+    ) {}
 
     ngOnInit(): void {}
 
     onSnap() {
         if (this.faceSnap.isClicked !== true) {
-            this.faceSnap.snaps++;
+            this.faceSnapService.snapFaceById(this.faceSnap.id, 'snap');
             this.faceSnap.btnText = 'Already liked';
             this.faceSnap.isClicked = true;
         } else {
-            this.faceSnap.snaps--;
+            this.faceSnapService.snapFaceById(this.faceSnap.id, 'unsnap');
             this.faceSnap.btnText = 'Like it!';
             this.faceSnap.isClicked = false;
         }
+    }
+
+    onRedirectById() {
+        this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`);
     }
 }

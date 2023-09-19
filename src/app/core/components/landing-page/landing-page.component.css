@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+    margin: 10vh 0vh;
+}
+button {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(53, 53, 53);
+    padding: 30px 50px;
+    border-radius: 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    font-style: italic;
+    background-color: rgba(53, 53, 53, 0.75);
+}
+img {
+    width: 24%;
+}
