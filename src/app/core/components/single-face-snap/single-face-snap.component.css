@@ -67,3 +67,14 @@ q {
 .snapped-txt {
     color: rgb(0, 70, 29)
 }
+.btnBack {
+    background-color: rgb(196, 0, 0);
+    box-shadow: 5px 5px 5px rgb(102, 0, 0);
+    display: block;
+    padding: 9px 18px 9px 18px;
+    width: max-content;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    border: none;
+}

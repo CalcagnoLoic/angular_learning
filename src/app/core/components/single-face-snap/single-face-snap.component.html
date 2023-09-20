@@ -3,12 +3,16 @@
         class="face-snap-component"
         [ngClass]="{ snapped: faceSnap.isClicked }"
     >
+        <button class="btnBack" (click)="onBack()">
+            &#8592; {{ "back" | uppercase }}
+        </button>
         <h1 [ngClass]="{ 'snapped-txt': faceSnap.isClicked }">
             {{ faceSnap.title | uppercase }}
         </h1>
 
         <p [ngClass]="{ 'snapped-txt': faceSnap.isClicked }">
-            Mis en ligne le {{ faceSnap.createdDate | date: 'HH:mm, le dd MMMM yyyy'}}
+            Mis en ligne le
+            {{ faceSnap.createdDate | date : "HH:mm, le dd MMMM yyyy" }}
         </p>
         <div
             class="container__img"
