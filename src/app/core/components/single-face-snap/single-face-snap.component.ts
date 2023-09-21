@@ -39,6 +39,6 @@ export class SingleFaceSnapComponent implements OnInit {
     }
 
     onBack() {
-      this.router.navigateByUrl('/facesnaps')
+        this.router.navigateByUrl('/facesnaps');
     }
 }
