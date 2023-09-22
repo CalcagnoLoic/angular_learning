@@ -1,0 +1,62 @@
+<div class="container">
+    <h2>Créer une nouvelle FaceSnap</h2>
+    <form [formGroup]="snapForm">
+        <div class="formGroup">
+            <label for="title">Titre</label>
+            <input
+                type="text"
+                name="title"
+                id="title"
+                formControlName="title"
+                placeholder="Nouveau FaceSnap"
+            />
+        </div>
+        <div class="formGroup">
+            <label for="description">Description</label>
+            <textarea
+                name="description"
+                id="description"
+                rows="4"
+                formControlName="description"
+                placeholder="Description du nouveau FaceSnap"
+            ></textarea>
+        </div>
+        <div class="formGroup">
+            <label for="imageUrl">URL de l'image</label>
+            <input
+                type="text"
+                name="imageUrl"
+                id="imageUrl"
+                formControlName="imageUrl"
+                placeholder="https://cdn.picture.png"
+            />
+        </div>
+        <div class="formGroup">
+            <label for="location">Lieu de la photo</label>
+            <input
+                type="text"
+                name="location"
+                id="location"
+                formControlName="location"
+                placeholder="Manage"
+            />
+        </div>
+        <div class="actionsForm">
+            <button type="submit" (click)="onSubmitForm()" [disabled]="snapForm.invalid">
+                Enregistrer un nouveau FaceSnap
+            </button>
+        </div>
+    </form>
+</div>
+<div class="face-snap-card" *ngIf="faceSnapPreview$ | async as faceSnap">
+    <h2>{{ faceSnap.title | uppercase }}</h2>
+    <p>
+        Mis en ligne à
+        {{ faceSnap.createdDate | date : "HH:mm, le dd MMMM yyyy" }}
+    </p>
+    <div class="container__img">
+        <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
+        <q>{{ faceSnap.description }}</q>
+        <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
+    </div>
+</div>

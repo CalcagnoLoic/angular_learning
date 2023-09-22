@@ -11,7 +11,7 @@ header {
 }
 nav {
     display: flex;
-    gap: 15px;
+    gap: 25px;
     justify-content: center;
     align-items: center;
 }
@@ -28,4 +28,18 @@ a:hover {
 .active {
     text-decoration: underline;
     color: rgb(34, 34, 34);
+}
+.btn__add {
+    background-color: rgb(53, 53, 53);
+    font-size: 20px;
+    padding: 5px 15px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgb(53, 53, 53);
+}
+.btn__add:hover {
+    background-color: rgba(53, 53, 53, 0.55);
+    box-shadow: 5px 5px 5px rgba(53, 53, 53, 0.55)
 }

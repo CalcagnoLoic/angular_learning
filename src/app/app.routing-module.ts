@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { FaceSnapListComponent } from './core/components/face-snap-list/face-snap-list.component';
 import { LandingPageComponent } from './core/components/landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './core/components/single-face-snap/single-face-snap.component';
+import { NewFaceSnapComponent } from './core/components/new-face-snap/new-face-snap.component';
 
 const routes: Routes = [
     { path: 'facesnaps/:id', component: SingleFaceSnapComponent },
     { path: 'facesnaps', component: FaceSnapListComponent },
+    { path: 'create', component: NewFaceSnapComponent },
     { path: '', component: LandingPageComponent },
 ];
 

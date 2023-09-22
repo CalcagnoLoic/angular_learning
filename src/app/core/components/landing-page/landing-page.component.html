@@ -1,6 +1,24 @@
-<div class="container">
-    <img src="../../assets/logo.png" alt="SnapFace" />
-    <button (click)="onRedirect()">
-        Continuer vers la page principale de SnapFace
-    </button>
+<div>
+    <div class="container">
+        <img src="../../assets/logo.png" alt="SnapFace" />
+        <button (click)="onRedirect()" class="btn__redirection">
+            Continuer vers la page principale de SnapFace
+        </button>
+    </div>
+    <form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">
+        <div>
+            <label for="emailInput">Inscrivez-vous à notre newsletter: </label>
+            <input
+                type="email"
+                id="userEmail"
+                placeholder="john.doe@snapface.org"
+                name="userEmail"
+                [(ngModel)]="userEmail"
+            />
+        </div>
+
+        <button class="btn__form" type="submit">
+            {{ "Envoyer" | uppercase }}
+        </button>
+    </form>
 </div>
