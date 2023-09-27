@@ -3,6 +3,7 @@ import { FaceSnap } from '../../models/face-snap_model';
 import { FaceSnapService } from '../../services/face-snaps.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-single-face-snap',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SingleFaceSnapComponent implements OnInit {
     faceSnap!: FaceSnap;
+    faceSnap$!: Observable<FaceSnap>;
     btnText!: string;
     isClicked!: boolean;
 
