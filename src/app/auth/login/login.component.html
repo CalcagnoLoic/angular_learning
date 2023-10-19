@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Connexion</h2>
+    <form>
+        <div class="formGroup">
+            <label for="email">Email</label>
+            <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="facesnaps@facesnap.com"
+            />
+        </div>
+        <div class="formGroup">
+            <label for="password">Mot de passe</label>
+            <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="*********"
+            />
+        </div>
+        <div class="actionsForm">
+            <button type="submit" (click)="onLogin()">Connexion</button>
+        </div>
+    </form>
+</div>
