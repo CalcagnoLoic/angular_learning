@@ -1,0 +1,23 @@
+div {
+  display: block;
+  margin: auto;
+  background-color: #e2e1ff;
+  border-radius: 50px;
+  width: 100vh;
+  text-align: center;
+
+  span {
+    font-style: italic;
+  }
+
+  blockquote {
+    margin-top: 20px;
+    font-style: italic;
+  }
+
+}
+
+.container {
+  border: black solid 2px;
+  box-shadow: 10px 10px 5px #ffdab9 ;
+}
